@@ -1,5 +1,8 @@
 <?php
-include 'head.php';
+include 'views/plantilla/head.php';
+?>
 
+Indice
 
-include 'foot.php';
+<?php
+include 'views/plantilla/foot.php';

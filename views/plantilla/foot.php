@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer>
-    <div class="container-fluid text-center pt-4 pb-4 fixed-bottom">
-        <a class="" href="#">Navbar</a>
+    <div class="container-fluid text-center pt-4 pb-4 fixed-bottom bgFoot text-light">
+        <spam>Navbar</spam>
     </div>
 </footer>
 
