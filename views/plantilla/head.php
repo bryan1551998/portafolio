@@ -41,10 +41,10 @@
                             <a class="nav-link" href="/views/login.php">Login</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="/views/register.php">Register</a>
+                            <a class="nav-link" href="/views/registro.php">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/views/insertProject.php">Portafolio</a>
+                            <a class="nav-link" href="/views/project.php">Portafolio</a>
                         </li>
                     </ul>
                 </div>

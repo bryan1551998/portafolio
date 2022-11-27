@@ -10,7 +10,7 @@ class Controller
             $userObject = new User();
             $userObject->createUser($user, $psswd);
         } else {
-            header('Location:views/register.php?error=campos');
+            header('Location:views/registro.php?error=campos');
         }
     }
 

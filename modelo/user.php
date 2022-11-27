@@ -50,10 +50,10 @@ class User
                 $smt2->execute([$user, $pssw]);
 
                 #Redirect Usuario existe
-                header('Location:views/register.php?error=sucess');
+                header('Location:views/registro.php?error=sucess');
             } else {
                 #Redirect Usuario ya existe 
-                header('Location:views/register.php?error=existe');
+                header('Location:views/registro.php?error=existe');
             }
         } catch (PDOException $e) {
 
