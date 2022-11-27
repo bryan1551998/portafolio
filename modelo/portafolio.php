@@ -4,15 +4,53 @@ require_once 'conexion.php';
 
 class Portafolio
 {
+    #Atributos
+    private $table = 'portafolio';
+    private $conexionModel;
 
-    public function insertPorafolio($query)
+    #Constructor
+    public function __construct()
     {
-        $conexion = new conexion();
+    }
 
-        $conexion->db();
+    #Obeter conexion
+    public function getConexion()
+    {
+        #Crear objeto conexion
+        $dbObject = new Conexion();
+
+        #Guardar conexion
+        $this->conexionModel = $dbObject->conexion;
+    }
+
+    #Obtener todos los portafolios
+    public function getPortafolio()
+    {
+        try {
+
+            #Obtener conexion
+            $this->getConexion();
+
+            #SQL
+            $quey = 'SELECT * FROM ' . $this->table;
+
+            #Preparar SQL
+            $smt = $this->conexionModel->prepare($quey);
+
+            #Ejecutar SQL
+            $smt->execute();
+
+            #Resultado
+            return $smt->fetchAll();
+        } catch (PDOException  $e) {
+
+            #Notificar error
+            echo 'Erorr Conexion: ' . $e->getMessage();
+            exit();
+        } finally {
+
+            #Cerrar conexion
+            $smt = null;
+        }
     }
 }
-
-$con = new consultas();
-
-$con->insertPorafolio('ff');

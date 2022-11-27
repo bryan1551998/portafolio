@@ -35,10 +35,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="/views/login.php">Login</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/views/register.php">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/views/insertProject.php">Portafolio</a>

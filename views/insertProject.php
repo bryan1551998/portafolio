@@ -16,7 +16,7 @@ include './plantilla/head.php';
                 <input type="file" class="form-control" name="contentFile" id="contentFile" placeholder="">
                 <br>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Crear</button>
 
             </form>
         </div>
