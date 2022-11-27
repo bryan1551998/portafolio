@@ -1,5 +1,6 @@
 <?php
 include './plantilla/head.php';
+include('../config.php');
 ?>
 
 <div class="container-fluid ">
@@ -8,7 +9,7 @@ include './plantilla/head.php';
 
             <h4 class="text-center m-4">Login</h4>
 
-            <form action="" method="post">
+            <form action="<?php echo URL . '?page=loginUser' ?>" method="post">
 
                 <label for="userLogin" class="form-label">User</label>
                 <input type="text" class="form-control" name="userLogin" id="userLogin" aria-describedby="helpId" placeholder="">

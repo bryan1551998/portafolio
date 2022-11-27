@@ -14,6 +14,9 @@
     <!-- CSS -->
     <link href="/css/style.css" rel="stylesheet">
 
+    <!-- Alerts -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 
 <body>

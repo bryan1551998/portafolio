@@ -1,14 +1,26 @@
 /* NAV */
 .bgNav {
     background-color: #5272d4 !important;
+
 }
+
+a.nav-link {
+    color: white !important;
+    transition: 0.8s;
+}
+
+a.nav-link:hover {
+    color: rgb(223, 221, 221) !important;
+    margin-left: 3px;
+    transition: 0.8s;
+}
+
 
 .bgFoot {
     background-color: #2f2e2e !important;
 }
 
 /* Boostrap BTN */
-
 .btn-primary {
     background-color: #4863b7 !important;
     border-color: #4863b7 !important;
@@ -24,8 +36,8 @@
 }
 
 /* Error */
-
 .errorForm {
     background-color: rgb(229, 109, 109);
     border-radius: 10px;
+    color: white;
 }

@@ -1,22 +1,66 @@
 <?php
 include './plantilla/head.php';
 include('../config.php');
+
+if (!empty($_GET['error'])) {
+
+    switch ($_GET['error']) {
+        case 'campos':
 ?>
+            <script>
+                swal({
+                    title: "ERROR",
+                    text: "Campos obligatiorios User y Password",
+                    icon: "error",
+
+                });
+            </script>
+        <?php
+            break;
+
+        case 'existe':
+        ?>
+            <script>
+                swal({
+                    title: "ERROR",
+                    text: "El USUARIO ya existe",
+                    icon: "error",
+
+                });
+            </script>
+        <?php
+            break;
+
+        case 'sucess':
+        ?>
+            <script>
+                swal({
+                    title: "¡CORRECTO!",
+                    text: "Usuario creado",
+                    icon: "success",
+                    timer: 1700,
+                    button: false,
+                });
+                setTimeout(llamar, 1750);
+
+                function llamar() {
+                    alert('Holaahora te redirijo');
+                }
+            </script>
+<?php
+            break;
+    }
+}
+?>
+
+
+
 
 <div class="container-fluid ">
     <div class="row justify-content-center">
         <div class="col-sm-8 col-md-3 p-4 ">
 
             <h4 class="text-center m-4">Registro</h4>
-
-            <?php
-            if (!empty($_GET['error'])) {
-
-                echo ' <div class="pt-4 pb-4 errorForm text-center">
-                    Campos obligatiorios User y Password
-                    </div><br>';
-            }
-            ?>
 
             <form action="<?php echo URL . '?page=register' ?>" method="post">
 
@@ -35,9 +79,6 @@ include('../config.php');
         </div>
     </div>
 </div>
-
-
-
 
 <?php
 include './plantilla/foot.php';
