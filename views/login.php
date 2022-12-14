@@ -1,6 +1,41 @@
 <?php
 include './plantilla/head.php';
 include('../config.php');
+
+//Control de acceso
+if (isset($_SESSION["userSession"])) {
+    header("Location:project.php");
+}
+
+//Mensajes de Error 
+if (!empty($_GET['error'])) {
+
+    switch ($_GET['error']) {
+        case 'campos':
+?>
+            <script>
+                swal({
+                    title: "ERROR",
+                    text: "Credenciales incorrectas",
+                    icon: "error",
+                });
+            </script>
+        <?php
+            break;
+
+        case 'existe':
+        ?>
+            <script>
+                swal({
+                    title: "ERROR",
+                    text: "El usuario NO existe",
+                    icon: "error",
+                });
+            </script>
+<?php
+            break;
+    }
+}
 ?>
 
 <div class="container-fluid ">

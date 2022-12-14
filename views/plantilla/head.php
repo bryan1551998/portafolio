@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -36,17 +40,33 @@
 
                 <!-- Links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/views/login.php">Login</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="/views/registro.php">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/views/project.php">Portafolio</a>
-                        </li>
+
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <?php if (!isset($_SESSION["userSession"])) { ?>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/views/login.php">Login</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="/views/registro.php">Register</a>
+                            </li>
+
+                        <?php } else { ?>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/views/project.php">Portafolio</a>
+                            </li>
+
+                        <?php } ?>
+
                     </ul>
+                    <span class="navbar-text text-white">
+                        <?php if (isset($_SESSION["userSession"])) {
+                            echo 'Hola ' . $_SESSION["userSession"];
+                        } ?>
+                    </span>
                 </div>
 
             </div>

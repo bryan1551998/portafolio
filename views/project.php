@@ -1,5 +1,11 @@
 <?php
 include './plantilla/head.php';
+
+//Control de acceso 
+if (!isset($_SESSION["userSession"])) {
+    header("Location:login.php");
+}
+
 ?>
 
 <div class="container-fluid">
@@ -22,10 +28,6 @@ include './plantilla/head.php';
         </div>
     </div>
 </div>
-
-
-
-
 
 <?php
 include './plantilla/foot.php';

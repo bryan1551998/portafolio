@@ -93,12 +93,14 @@ class User
 
                 #Verificar si la contraseña es correcta
                 if (password_verify($pssw, $passHash)) {
-                    echo 'Si lo son jeje';
+                    session_start();
+                    $_SESSION["userSession"] = $user;
+                    header('Location:views/project.php');
                 } else {
-                    echo 'No son correctas';
+                    header('Location:views/login.php?error=campos');
                 }
             } else {
-                echo 'El usuario no EXISTE';
+                header('Location:views/login.php?error=existe');
             }
         } catch (PDOException $e) {
 

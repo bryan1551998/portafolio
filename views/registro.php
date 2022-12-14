@@ -2,6 +2,12 @@
 include './plantilla/head.php';
 include('../config.php');
 
+//Control de acceso
+if (isset($_SESSION["userSession"])) {
+    header("Location:project.php");
+}
+
+//Mensajes de Error
 if (!empty($_GET['error'])) {
 
     switch ($_GET['error']) {
@@ -12,7 +18,6 @@ if (!empty($_GET['error'])) {
                     title: "ERROR",
                     text: "Campos obligatiorios User y Password",
                     icon: "error",
-
                 });
             </script>
         <?php
@@ -25,7 +30,6 @@ if (!empty($_GET['error'])) {
                     title: "ERROR",
                     text: "El USUARIO ya existe",
                     icon: "error",
-
                 });
             </script>
         <?php
@@ -52,9 +56,6 @@ if (!empty($_GET['error'])) {
     }
 }
 ?>
-
-
-
 
 <div class="container-fluid ">
     <div class="row justify-content-center">
