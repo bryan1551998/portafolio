@@ -19,4 +19,12 @@ class Controller
         $userObject = new User();
         $userObject->userLogin($user, $psswd);
     }
+
+    public static function cerrarSesion()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+        header('Location:' . URL);
+    }
 }

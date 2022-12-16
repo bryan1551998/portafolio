@@ -1,6 +1,6 @@
 <?php
 include './plantilla/head.php';
-include('../config.php');
+
 
 //Control de acceso
 if (isset($_SESSION["userSession"])) {

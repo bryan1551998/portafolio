@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include_once("../config.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -65,6 +65,11 @@ session_start();
                     <span class="navbar-text text-white">
                         <?php if (isset($_SESSION["userSession"])) {
                             echo 'Hola ' . $_SESSION["userSession"];
+                        } ?>
+                    </span>
+                    <span class="navbar-text text-white">
+                        <?php if (isset($_SESSION["userSession"])) {
+                            echo '<a class="cerrarSession" href="' . URL . '?page=cerrarSesion">Cerrar Sesión</a>';
                         } ?>
                     </span>
                 </div>

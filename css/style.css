@@ -41,3 +41,17 @@ a.nav-link:hover {
     border-radius: 10px;
     color: white;
 }
+
+/* BTN Ccerrar Session */
+.cerrarSession {
+    color: white !important;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: 0.8s;
+}
+
+.cerrarSession:hover {
+    margin-right: 3px;
+    transition: 0.8s;
+    color: rgb(223, 221, 221) !important;
+}

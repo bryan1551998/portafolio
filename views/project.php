@@ -18,7 +18,7 @@ if (!isset($_SESSION["userSession"])) {
                 <input type="text" class="form-control" name="nameProject" id="nameProject" placeholder="">
                 <br>
 
-                <label for="contentFile" class="form-label">Choose file</label>
+                <label for="contentFile" class="form-label">Selecciona un archivo</label>
                 <input type="file" class="form-control" name="contentFile" id="contentFile" placeholder="">
                 <br>
 
