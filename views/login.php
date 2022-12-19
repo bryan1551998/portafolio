@@ -62,8 +62,5 @@ if (!empty($_GET['error'])) {
     </div>
 </div>
 
-
-
-
 <?php
 include './plantilla/foot.php';
