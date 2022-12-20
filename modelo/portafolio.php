@@ -53,4 +53,35 @@ class Portafolio
             $smt = null;
         }
     }
+
+    #Insert 
+    public function insertPortafolio($nobreFichero, $target_dir)
+    {
+        try {
+
+            #Obtener conexion
+            $this->getConexion();
+
+            #SQL
+            $quey = 'INSERT INTO ' . $this->table . " (nombre,ruta) VALUES ('" . $nobreFichero . "','" . $target_dir . "');";
+
+            #Preparar SQL
+            $smt = $this->conexionModel->prepare($quey);
+
+            #Ejecutar SQL
+            $smt->execute();
+
+            // #Resultado
+            // return $smt->fetchAll();
+        } catch (PDOException  $e) {
+
+            #Notificar error
+            echo 'Erorr Conexion: ' . $e->getMessage();
+            exit();
+        } finally {
+
+            #Cerrar conexion
+            $smt = null;
+        }
+    }
 }

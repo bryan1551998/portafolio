@@ -1,45 +1,74 @@
 <?php
 include './plantilla/head.php';
 
-
 //Control de acceso 
 if (!isset($_SESSION["userSession"])) {
     header("Location:login.php");
 }
 
+//Mensajes de Error 
+if (!empty($_GET['error'])) {
 
+    switch ($_GET['error']) {
+        case 'existe':
+?>
+            <script>
+                swal({
+                    title: "ERROR",
+                    text: "El archivo ya EXISTE.",
+                    icon: "error",
+                });
+            </script>
+        <?php
+            break;
 
-if ($_POST) {
+        case 'extension':
+        ?>
+            <script>
+                swal({
+                    title: "ERROR",
+                    text: "El archivo tiene que tener extensión PNG o JPG.",
+                    icon: "error",
+                });
+            </script>
+        <?php
+            break;
 
-    // Obtener el SUBMIT
-    $nameProject = $_POST['nameProject'];
-    $contentFile = $_FILES;
-    $target_dir = "../upload/" . $_FILES["contentFile"]["name"];
+        case 'sucess':
+        ?>
+            <script>
+                swal({
+                    title: "¡CORRECTO!",
+                    text: "Fichero guardado.",
+                    icon: "success",
+                    timer: 1700,
+                    button: false,
+                });
+            </script>
+        <?php
+            break;
 
-    // Obtener EXTENSION del archivo
-    $imageFileType = strtolower(pathinfo($target_dir, PATHINFO_EXTENSION));
-
-    echo  $imageFileType;
-
-    // Comprobar si EXISTE
-    if (file_exists($target_dir)) {
-        echo "El Archivo EXISTE!";
-    } else {
-        if ($imageFileType == 'png' or $imageFileType == 'jpg') {
-            // Guardar el ARCHIVO
-            move_uploaded_file($_FILES['contentFile']['tmp_name'], $target_dir);
-        } else {
-            echo 'El archivo tiene que tener extensión PNG o JPJ';
-        }
+        case 'empty':
+        ?>
+            <script>
+                swal({
+                    title: "ERROR",
+                    text: "Por favor sube un archivo.",
+                    icon: "error",
+                });
+            </script>
+<?php
+            break;
     }
 }
+
 ?>
 
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-sm-8 col-md-4 p-4">
 
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data" action="<?php echo URL . '?page=guardarFichero' ?>">
 
                 <label for="nameProject" class="form-label">Nombre del proyecto</label>
                 <input type="text" class="form-control" name="nameProject" id="nameProject" placeholder="">

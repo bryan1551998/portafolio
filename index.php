@@ -29,6 +29,11 @@ switch ($page) {
         Controller::cerrarSesion();
         break;
 
+    case 'guardarFichero':
+
+        Controller::guardarFichero($_POST['nameProject'], $_FILES);
+        break;
+
     default:
 
         header('Location:views/login.php');
